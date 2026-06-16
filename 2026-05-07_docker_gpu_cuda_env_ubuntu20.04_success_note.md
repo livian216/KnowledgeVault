@@ -361,7 +361,7 @@ GPU 工具链验证完成后，可以创建一个长期使用的训练容器。
 假设宿主机训练工程目录为：
 
 ```text
-/home/livian/workspaces/smt_ai_workspace
+/home/your-username/workspaces/smt_ai_workspace
 ```
 
 建议先拉取训练用 CUDA + cuDNN 开发镜像：
@@ -373,12 +373,12 @@ docker pull docker.m.daocloud.io/nvidia/cuda:12.1.1-cudnn8-devel-ubuntu20.04
 启动训练开发容器：
 
 ```bash
-docker run --name livian-gpu-train \
+docker run --name your-gpu-train \
   --gpus all \
   -p 7777:22 \
   --workdir=/workspace \
   --privileged=true \
-  -v /home/kolbey/program:/workspace/program \
+  -v /home/your-username/program:/workspace/program \
   --shm-size=16g \
   --ulimit memlock=-1 \
   --ulimit stack=67108864 \
@@ -391,7 +391,7 @@ docker run --name livian-gpu-train \
 参数说明：
 
 ```text
---name livian-gpu-train
+--name your-gpu-train
 ```
 
 指定容器名称，方便后续启动、停止、进入和删除该容器。
@@ -421,10 +421,10 @@ docker run --name livian-gpu-train \
 赋予容器较高权限，便于容器访问更多宿主机设备和系统能力。对于单纯 GPU 训练不是必须项，但在开发调试、设备访问、底层工具使用等场景下可以减少权限问题。
 
 ```text
--v /home/kolbey/program:/workspace/program
+-v /home/your-username/program:/workspace/program
 ```
 
-将宿主机目录 /home/kolbey/program 挂载到容器内 /workspace/program。代码、数据、模型文件保存在宿主机，不会因为删除容器而丢失。
+将宿主机目录 /home/your-username/program 挂载到容器内 /workspace/program。代码、数据、模型文件保存在宿主机，不会因为删除容器而丢失。
 
 ```text
 --shm-size=16g
