@@ -16,6 +16,9 @@
 | Codex 客户端登录失败 | Token 交换失败问题的排查与处理 |
 | Arduino IDE 启动卡住 | IDE 2.3.8 代理环境变量导致启动异常的修复 |
 | Claude Code + DeepSeek V4 Pro | Claude Code 通过 DeepSeek API 使用的配置指南 |
+| ARS 学术研究插件使用教程 | Claude Code ARS 插件从安装到全流程论文写作 |
+| ZeroTier 防火墙问题解决 | Windows 11 防火墙导致 ZeroTier 无法连接的排查 |
+| nature-skills 集成可行性评估 | nature-skills 技能包集成到 Claude Code 的可行性与适配分析 |
 
 ## 组织方式
 
