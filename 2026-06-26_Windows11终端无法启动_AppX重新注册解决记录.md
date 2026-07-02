@@ -110,7 +110,7 @@ taskkill /f /im wt.exe 2>nul
 在管理员 CMD 中执行以下命令：
 
 ```bat
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-AppxPackage -AllUsers Microsoft.WindowsTerminal | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-AppxPackage -AllUsers -Name Microsoft.WindowsTerminal | ForEach-Object { $manifest = Join-Path $_.InstallLocation 'AppXManifest.xml'; Add-AppxPackage -DisableDevelopmentMode -Register $manifest }"
 ```
 
 执行完成后，再运行：
@@ -201,7 +201,7 @@ Windows Terminal 属于 Microsoft Store / AppX 类型应用。它不仅依赖程
 后续如果再次遇到 Windows Terminal 无法启动，可以先打开管理员 CMD，然后执行：
 
 ```bat
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-AppxPackage -AllUsers Microsoft.WindowsTerminal | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-AppxPackage -AllUsers -Name Microsoft.WindowsTerminal | ForEach-Object { $manifest = Join-Path $_.InstallLocation 'AppXManifest.xml'; Add-AppxPackage -DisableDevelopmentMode -Register $manifest }"
 ```
 
 执行完成后测试：
@@ -222,7 +222,7 @@ wt.exe
 最终有效命令为：
 
 ```bat
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-AppxPackage -AllUsers Microsoft.WindowsTerminal | ForEach-Object {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Get-AppxPackage -AllUsers -Name Microsoft.WindowsTerminal | ForEach-Object { $manifest = Join-Path $_.InstallLocation 'AppXManifest.xml'; Add-AppxPackage -DisableDevelopmentMode -Register $manifest }"
 ```
 
 问题本质上更接近于 Windows Terminal 的 AppX 应用注册异常，而不是 CMD、PowerShell 或开发环境本身损坏。该操作不会影响已有代码项目和开发工程，主要修复的是 Windows Terminal 作为系统应用的注册与启动入口。
