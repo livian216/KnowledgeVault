@@ -1,36 +1,30 @@
 # KnowledgeVault
 
-个人开发与学习的 Markdown 笔记仓库，通过 GitHub 做云端备份和版本管理。
+个人学习笔记与工作备忘的知识库，使用纯 Markdown 沉淀，通过 GitHub 进行云端备份与版本管理。
 
 ## 这是什么
 
-日常开发、调试、环境配置、工具使用过程中产生的备忘记录，统一以 Markdown 文件沉淀在这里。不依赖特定笔记软件，纯文本，长期可读。
+一个面向个人开发与学习场景的 Markdown 笔记仓库，记录日常开发、调试、环境配置与工具使用过程中的经验与备忘。不依赖任何特定笔记软件，纯文本、长期可读，历史版本由 Git 统一管理。
 
-## 内容概览
+## 内容定位
 
-| 笔记 | 主题 |
-|---|---|
-| Docker GPU CUDA 环境搭建 | Ubuntu 20.04 + Docker + CUDA 踩坑记录 |
-| RK3588 开发环境 | 易百纳 RK3588 Ubuntu 24.04 开发环境配置 |
-| Git 工程同步到 GitHub | 本地已有工程推送到 GitHub 的完整流程备忘 |
-| Codex 客户端登录失败 | Token 交换失败问题的排查与处理 |
-| Arduino IDE 启动卡住 | IDE 2.3.8 代理环境变量导致启动异常的修复 |
-| Claude Code + DeepSeek V4 Pro | Claude Code 通过 DeepSeek API 使用的配置指南 |
-| ARS 学术研究插件使用教程 | Claude Code ARS 插件从安装到全流程论文写作 |
-| ZeroTier 防火墙问题解决 | Windows 11 防火墙导致 ZeroTier 无法连接的排查 |
-| nature-skills 集成可行性评估 | nature-skills 技能包集成到 Claude Code 的可行性与适配分析 |
+仓库收录的内容覆盖以下方向（不限于）：
+
+- **环境搭建与配置**：Linux / Windows 开发环境、Docker / GPU、嵌入式开发板等
+- **工具使用与上手教程**：Claude Code、Codex、ZeroTier、uv、SSH 等工具与服务的配置与使用
+- **问题排查与解决**：开发与使用过程中遇到的典型问题及解决思路
+- **流程备忘**：工程同步、环境管理等日常操作的记录
 
 ## 组织方式
 
-- 文件命名：`YYYY-MM-DD_主题关键词.md`
-- 笔记直接存放在仓库根目录，结构轻量
-- 使用 Git 管理历史版本，GitHub 作为远程备份
+- 笔记统一命名为 `YYYY-MM-DD_主题关键词.md`
+- 直接存放于仓库根目录，结构轻量、便于检索
+- 使用 Git 管理历史版本，GitHub 作为远程备份与公开访问入口
 
-## 注意事项
+## 使用说明
 
-- 这是个人笔记仓库，内容可能粗糙或带有个人环境偏好
-- 笔记以中文为主
-- **请勿上传** API Key、Token、密码、私钥等敏感信息。本仓库已配置 `.gitignore` 排除相关文件
+- 笔记以中文为主，可能带有个人环境偏好，内容仅供参考
+- 请勿上传 API Key、Token、密码、私钥等敏感信息，仓库已通过 `.gitignore` 排除相关文件
 
 ## License
 
